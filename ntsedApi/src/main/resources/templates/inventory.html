@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>在庫情報管理</title>
+<link rel="stylesheet" type="text/css" href="/static/css/inventory.css">
+</head>
+<body>
+	<div class="container">
+		<h1>在庫情報管理</h1>
+		<label for="stockID">在庫ID</label> <input type="text" id="stockID"
+			value="ＯＯＯＯＯＯ" disabled> <label for="stockName">*在庫名称</label>
+		<input type="text" id="stockName" placeholder="ＢＢ（50桁まで）"
+			maxlength="50" required> <label for="unitSelect">*単位：</label>
+		<select id="unitSelect">
+			<option value="個">個</option>
+			<option value="箱">箱</option>
+			<option value="袋">袋</option>
+			<option value="籠">籠</option>
+		</select> <label for="remarks">備考</label>
+		<textarea id="remarks" placeholder="BBBB"
+			maxlength="200"></textarea>
+
+		<button type="submit">登録</button>
+		<button class="close">閉じる</button>
+		<button class="modify">修正</button>
+	</div>
+</body>
+</html>
