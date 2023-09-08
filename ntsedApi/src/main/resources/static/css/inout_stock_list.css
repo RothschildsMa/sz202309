@@ -1,0 +1,121 @@
+/* 表格 */
+table {
+    width: 100%; /* 表格宽度充满容器 */
+    border-collapse: collapse; /* 合并边框 */
+}
+table td:nth-child(1) {
+    width: 15%; /* 设置第一列的宽度为表格宽度的20% */
+}
+table td:nth-child(2) {
+    width: 15%; /* 设置第二列的宽度为表格宽度的30% */
+}
+table td:nth-child(3) {
+    width: 20%; /* 设置第一列的宽度为表格宽度的20% */
+}
+table td:nth-child(4) {
+    width: 15%; /* 设置第二列的宽度为表格宽度的30% */
+}
+/* 表格中的单元格 */
+td, th {
+    padding: 5px; /* 单元格内边距 */
+    border: 1px solid #ccc; /* 边框 */
+    text-align: left; /* 文本水平对齐方式 */
+}
+th {
+    text-align: center; /* 文本水平对齐方式 */
+    background-color: #94c094; /* 背景颜色 */
+}
+
+/* 按钮样式 */
+input[type="submit"]{
+    padding: 5px 15px; /* 内边距 */
+    font-size: 16px; /* 字体大小 */
+    font-weight: bolder; /* 字体粗细 */
+    border: 1px solid #ccc; /* 边框 */
+    border-radius: 4px; /* 圆角 */
+    background-color: green; /* 背景颜色 */
+    color: white; /* 文本颜色 */
+    cursor: pointer; /* 鼠标指针样式 */
+}
+input[type="submit"]:hover{
+    background-color: #054605; /* 鼠标悬停时的背景颜色 */
+}
+.whole{
+	margin: 0 auto; /* 水平居中对齐 */
+    width: 1200px; /* 设置宽度 */
+    height: 93vh; /* 设置容器的高度为视口高度的90% */
+    padding: 10px; /* 设置内边距 */
+    background-color: #f2f2f2; /* 设置背景颜色 */
+    border: 1px solid #ccc; /* 边框 */
+    
+	display: flex;
+	flex-direction: column; /* 让子元素纵向排列 */
+	justify-content:center; /* 水平居中 */
+	align-items:flex-start; /* 顶部对齐 */
+
+}
+/* ---情报及检索栏--- */
+.above-grid-container{
+	display: grid; /* 使用Grid布局 */
+	width: 100%; /* 设置容器的宽度 */
+	grid-template-columns: 12fr 44fr 15fr 30fr 15fr 16fr; /* 设置不同列的宽度 */
+	
+	grid-gap: 0px; /* 列间距 */
+	grid-row-gap: 4px; /* 行间距 */
+	
+	margin: 0 auto; /* 居中对齐容器 */
+}
+.above-grid-container > div {
+	text-align: left; /* 文本内容水平靠左 */
+	padding: 10px; /* 内边距 */
+	font-size: 16px; /* <div> 内文本的字体大小 */
+	display: flex; /* 使用 Flex 布局 */
+    align-items: center; /* 垂直居中元素内容 */
+}
+.above-grid-container > div:nth-child(odd) {
+	font-weight: bold; /* 奇数列文字加粗 */
+}
+
+.select-date{
+	font-family: inherit;
+	height:100%;
+	font-size: 14px; /* 字体大小 */
+}
+.select-box{
+	font-family: inherit;
+	width:150px;
+	height:100%;
+	font-size: 14px; /* <select> 内选项的字体大小 */
+}
+.unit{
+    padding: 0 20px; /* 左右内边距*/
+}
+.wave{
+	font-weight: bold; /* 加粗 */
+    padding: 0 5px; /* 左右内边距*/
+}
+/* ---追加按钮栏--- */
+.add{
+	display: flex; /* 使用flex布局 */
+	justify-content:flex-start; /* 左对齐 */
+	align-items:center; /* 垂直居中对齐 */
+	
+	width: 100%; /* 宽度 */
+	height: 10vh;
+	margin: 0 auto; /* 居中对齐容器 */
+}
+/* ---列表栏--- */
+.list{
+	width: 100%; /* 宽度 */
+	height: 80vh;
+	margin: 0 auto; /* 居中对齐容器 */
+	overflow-y: scroll; /* 垂直滚动条一直显示 */
+	
+	border: 1px solid #ccc; /* 边框 */
+	background-color: #e2e2e2; /* 背景颜色 */
+}
+
+
+
+
+

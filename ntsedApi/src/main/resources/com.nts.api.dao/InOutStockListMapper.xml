@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nts.api.dao.InOutStockListMapper">
+
+	<resultMap id="StockResult" type="com.nts.api.entity.InOutStock">
+		<result column="stock_name" property="stockName" />
+		<result column="code_name" property="unitName" />
+		<result column="stock_num" property="stockNum" />
+	</resultMap>
+	
+	<!-- 在库情报 -->
+	<select id="getStockDataById" resultMap="StockResult">
+		SELECT 
+			t_stock.name AS stock_name, 
+			m_code.name AS code_name,
+			t_stock.stock_num
+		FROM
+			t_stock 
+		LEFT JOIN
+			m_code
+		ON
+			t_stock.unit_id = m_code.code_id
+		WHERE
+			m_code.code_kbn = '1002'
+		AND
+			t_stock.id = #{id};	<!-- id -->
+	</select>
+
+</mapper>

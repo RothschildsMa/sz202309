@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>入出庫情報一覧</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/inout_stock_list.css}">
+</head>
+<body>
+	<form th:object="${inOutStock}">
+		<div class="whole">
+			<div class="above-grid-container">
+				<div>在庫名称：</div>
+				<div>
+				<span th:text="${inOutStock.stockName}"></span>
+				</div>
+				
+				<div>単<span class="unit">位：</span></div>
+				<div>
+				<span th:text="車"></span>
+				</div>
+				
+				<div>在 庫 数 量：</div>
+				<div>
+				<span th:text="9999"></span>
+				</div>
+				
+				<div>入出庫日：</div>
+				<div>
+				<input type="date" class="select-date">
+				<span class="wave">～</span>
+				<input type="date" class="select-date">
+				</div>
+				
+				<div>入出庫タイプ：</div>
+				<div>
+					<select class="select-box">
+					<option>123</option><option>456</option>
+					</select>
+				</div>
+				
+				<div>
+					<input name="button" type="submit" value="検索" class="button">
+				</div>
+				<div>
+					<input name="button" type="submit" value="閉じる" class="button">
+				</div>
+			</div>
+			<div class="add">
+				<input name="button" type="submit" value="追加" class="button">
+			</div>
+			<div class="list">
+				<table>
+					<thead>
+		                <tr>
+		                    <th width=>入出庫タイプ</th>
+		                    <th>入出庫数量</th>
+		                    <th>入出庫日時</th>
+		                    <th>入出庫者</th>
+		                    <th>備考</th>
+		                </tr>
+					</thead>
+					<tbody>
+		                <tr>
+		                    <td>入庫</td>
+		                    <td>10</td>
+		                    <td>2023-08-31 10:00:00</td>
+		                    <td>John Doe</td>
+		                    <td>备注内容</td>
+		                </tr>
+           			</tbody>
+
+				</table>
+			</div>
+		</div>
+	</form>
+</body>
+</html>
