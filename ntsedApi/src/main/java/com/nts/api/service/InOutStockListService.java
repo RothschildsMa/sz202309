@@ -1,9 +1,6 @@
 package com.nts.api.service;
 
-
-
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,12 +26,11 @@ public class InOutStockListService {
 	}
 
 	//取得当前商品在库信息和出入库记录
-	public InOutStockList getInOutStockListById(String id, int iOTypeId){
+	public InOutStockList getInOutStockListById(String id, String ioDateFrom, String ioDateTo, int iOTypeId){
 		InOutStockList inOutStockList = inOutStockListMapper.getStockDataById(id);//在库信息
-		inOutStockList.setInOutItemList(inOutStockListMapper.getIODataListById(id,iOTypeId));//出入库记录
+		inOutStockList.setInOutItemList(inOutStockListMapper.getIODataListById(id,ioDateFrom,ioDateTo,iOTypeId));//出入库记录
 		return inOutStockList;
 	}
 	
 	
-
 }

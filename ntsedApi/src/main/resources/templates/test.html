@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>临时界面</title>
+</head>
+<body>
+	<form method="POST">
+		<input type="text" id="id" value="S0001">
+		<input name="button" type="button" value="跳转" onclick="redirect()">
+	</form>
+
+	<script>
+        function redirect() {
+            var id = document.getElementById("id").value;
+        	window.location.href = '/inventory/' + id + '/inoutstocklist';
+        }
+    </script>
+</body>
+</html>

@@ -50,10 +50,22 @@
 		WHERE
 			m_code.code_kbn = '1001'
 		AND
-			t_stock_io.id = #{id}	<!-- id -->
+			t_stock_io.id = #{id}
+
+		 <!-- 增加入出庫タイプ条件 -->
 		<if test="iOTypeId != 0">
-		    AND <!-- 增加入出庫タイプ条件 -->
+		    AND
 		   		m_code.code_id = #{iOTypeId}
+		</if>
+		
+		<!-- 增加入出庫日条件 -->
+		<if test="ioDateFrom != ''">
+		    AND 
+		   		DATE(t_stock_io.create_date) >= #{ioDateFrom}
+		</if>
+		<if test="ioDateTo != ''">
+		    AND
+		   		DATE(t_stock_io.create_date) &lt;= #{ioDateTo}; <!-- 小于号在XML和HTML中通常被用于表示标记的开始 -->
 		</if>
 
 	</select>
