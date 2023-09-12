@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.nts.api.dao.IOTypeMapper">
+
+	<!-- 入出庫タイププルダウンリスト -->
+	<resultMap id="IOTyleResult" type="com.nts.api.entity.InOutType">
+		<result column="io_type_id" property="iOTypeId" />
+		<result column="io_type_name" property="iOTypeName" />
+	</resultMap>
+
+	<select id="getInOutType" resultMap="IOTyleResult">
+		SELECT
+			code_id as io_type_id,
+			name as io_type_name
+		FROM
+			m_code
+		WHERE
+			code_kbn = '1001'
+		AND
+			del_flg = 0;
+	</select>
+
+</mapper>

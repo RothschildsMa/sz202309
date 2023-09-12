@@ -4,9 +4,10 @@
 	<meta charset="UTF-8">
 	<title>入出庫情報一覧</title>
 	<link rel="stylesheet" type="text/css" th:href="@{/css/inout_stock_list.css}">
+	
 </head>
 <body>
-	<form th:object="${inOutStock}">
+	<form id="myForm" method="GET" th:object="${inOutStockList}">
 		<div class="whole">
 			<div class="above-grid-container">
 				<div>在庫名称：</div>
@@ -16,12 +17,12 @@
 				
 				<div>単<span class="unit">位：</span></div>
 				<div>
-				<span th:text="車"></span>
+				<span th:text="*{unitName}"></span>
 				</div>
-				
+	
 				<div>在 庫 数 量：</div>
 				<div>
-				<span th:text="9999"></span>
+				<span th:text="*{stockNum}"></span>
 				</div>
 				
 				<div>入出庫日：</div>
@@ -33,13 +34,14 @@
 				
 				<div>入出庫タイプ：</div>
 				<div>
-					<select class="select-box">
-					<option>123</option><option>456</option>
+					<select class="select-box" name="type">
+					<option value="0" selected>--すべてのタイプ--</option>
+					<option th:each="type : ${inOutType}" th:text="${type.iOTypeName}" th:value="${type.iOTypeId}"></option>
 					</select>
 				</div>
 				
 				<div>
-					<input name="button" type="submit" value="検索" class="button">
+					<input name="button" type="submit" value="検索" class="button" onclick="redirectToInOutStockList()">
 				</div>
 				<div>
 					<input name="button" type="submit" value="閉じる" class="button">
@@ -60,12 +62,13 @@
 		                </tr>
 					</thead>
 					<tbody>
-		                <tr>
-		                    <td>入庫</td>
-		                    <td>10</td>
-		                    <td>2023-08-31 10:00:00</td>
-		                    <td>John Doe</td>
-		                    <td>备注内容</td>
+						<!-- 使用Thymeleaf循环遍历数据 -->
+		                <tr th:each="item : ${inOutStockList.inOutItemList}">
+		                    <td th:text="${item.iOTypeName}"></td>
+		                    <td th:text="${item.iONumber}"></td>
+		                    <td th:text="${item.iODate}"></td>
+		                    <td th:text="${item.iOUser}"></td>
+		                    <td th:text="${item.remarks}"></td>
 		                </tr>
            			</tbody>
 
@@ -73,5 +76,9 @@
 			</div>
 		</div>
 	</form>
+	
+	<script src="/static/js/inout_stock_list.js" th:src="@{/js/inout_stock_list.js}">
+	</script>
+
 </body>
 </html>
