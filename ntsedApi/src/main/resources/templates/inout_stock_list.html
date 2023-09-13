@@ -7,7 +7,7 @@
 	
 </head>
 <body>
-	<form id="myForm" method="GET" th:object="${inOutStockList}">
+	<form method="GET" th:object="${inOutStockList}">
 		<div class="whole">
 			<div class="above-grid-container">
 				<div>在庫名称：</div>
@@ -27,40 +27,47 @@
 				
 				<div>入出庫日：</div>
 				<div>
-				<input type="date" class="select-date">
+				<input type="date" class="select-date" name="from" th:value="${ioDateFrom}">
 				<span class="wave">～</span>
-				<input type="date" class="select-date">
+				<input type="date" class="select-date" name="to" th:value="${ioDateTo}">
 				</div>
 				
 				<div>入出庫タイプ：</div>
 				<div>
 					<select class="select-box" name="type">
-					<option value="0" selected>--すべてのタイプ--</option>
-					<option th:each="type : ${inOutType}" th:text="${type.iOTypeName}" th:value="${type.iOTypeId}"></option>
+					<option value="0" selected>--</option>
+					<option th:each="type : ${inOutType}" th:text="${type.iOTypeName}" th:value="${type.iOTypeId}" th:selected="${type.iOTypeId == iOTypeId}"></option>
 					</select>
 				</div>
 				
 				<div>
-					<input name="button" type="submit" value="検索" class="button" onclick="redirectToInOutStockList()">
+					<input name="button" type="submit" value="検索">
 				</div>
 				<div>
-					<input name="button" type="submit" value="閉じる" class="button">
+					<input name="button" type="button" value="閉じる" onclick="goBack()" class="closebotton">
 				</div>
 			</div>
+
 			<div class="add">
-				<input name="button" type="submit" value="追加" class="button">
+				<input name="back" type="button" value="追加" onclick="goToAdd()" class="addbotton">
+				<input type="hidden" th:value="${id}" id="idValue">
 			</div>
-			<div class="list">
+			<div class="th">
 				<table>
 					<thead>
 		                <tr>
-		                    <th width=>入出庫タイプ</th>
+		                    <th>入出庫タイプ</th>
 		                    <th>入出庫数量</th>
 		                    <th>入出庫日時</th>
 		                    <th>入出庫者</th>
 		                    <th>備考</th>
 		                </tr>
 					</thead>
+				</table>
+			</div>
+
+			<div class="list">
+				<table>
 					<tbody>
 						<!-- 使用Thymeleaf循环遍历数据 -->
 		                <tr th:each="item : ${inOutStockList.inOutItemList}">

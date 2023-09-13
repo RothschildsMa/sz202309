@@ -1,7 +1,10 @@
-// 捕获用户选择的入出庫タイプ值
-function redirectToInOutStockList() {
-    var id = document.getElementById('myForm').elements['id'].value; // 获取id参数值
-    var url = '/' + id + '/inoutstocklist'; // 构建URL
-    document.getElementById('myForm').action = url; // 设置表单的action属性
-    document.getElementById('myForm').submit(); // 提交表单，进行跳转
+// 将参数id传递到入出庫情報登録界面
+function goToAdd() {
+	var id = document.getElementById("idValue").value;
+	window.location.href = '/' + id + '/stockioregister';
+}
+
+// 返回在庫情報一覧界面
+function goBack() {
+	window.location.href = '/inventory'; //待更新
 }

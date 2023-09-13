@@ -15,6 +15,6 @@ public interface InOutStockListMapper {
 	InOutStockList getStockDataById(String id);
 	
 	//取得当前商品出入库记录
-	List<InOutStockList.InOutItem> getIODataListById(String id, int iOTypeId);
+	List<InOutStockList.InOutItem> getIODataListById(String id, String ioDateFrom, String ioDateTo, int iOTypeId);
 
 }

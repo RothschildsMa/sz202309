@@ -1,24 +1,29 @@
+body {
+    font-family: "serif","Maru Gothic","Mincho"; /* 设置字体及备用字体 */
+}
+
 /* 表格 */
 table {
     width: 100%; /* 表格宽度充满容器 */
     border-collapse: collapse; /* 合并边框 */
 }
-table td:nth-child(1) {
-    width: 15%; /* 设置第一列的宽度为表格宽度的20% */
+table td:nth-child(1),table th:nth-child(1){
+    width: 15%; /* 设置第一列的宽度为表格宽度的15% */
 }
-table td:nth-child(2) {
-    width: 15%; /* 设置第二列的宽度为表格宽度的30% */
+table td:nth-child(2),table th:nth-child(2) {
+    width: 15%; /* 设置第2列的宽度 */
 }
-table td:nth-child(3) {
-    width: 20%; /* 设置第一列的宽度为表格宽度的20% */
+table td:nth-child(3),table th:nth-child(3) {
+    width: 20%; /* 设置第3列的宽度 */
 }
-table td:nth-child(4) {
-    width: 15%; /* 设置第二列的宽度为表格宽度的30% */
+table td:nth-child(4),table th:nth-child(4) {
+    width: 15%; /* 设置第4列的宽度 */
 }
+
 /* 表格中的单元格 */
 td, th {
-    padding: 5px; /* 单元格内边距 */
-    border: 1px solid #ccc; /* 边框 */
+    padding: 6px; /* 单元格内边距 */
+    border: 1px solid #d0cbcb; /* 边框 */
     text-align: left; /* 文本水平对齐方式 */
 }
 th {
@@ -27,25 +32,37 @@ th {
 }
 
 /* 按钮样式 */
-input[type="submit"]{
-    padding: 5px 15px; /* 内边距 */
+input[type="submit"],.addbotton,.closebotton{
     font-size: 16px; /* 字体大小 */
     font-weight: bolder; /* 字体粗细 */
     border: 1px solid #ccc; /* 边框 */
     border-radius: 4px; /* 圆角 */
-    background-color: green; /* 背景颜色 */
     color: white; /* 文本颜色 */
     cursor: pointer; /* 鼠标指针样式 */
+    padding: 5px 15px; /* 内边距 */
+	background-color: green; /* 背景颜色 */
 }
-input[type="submit"]:hover{
+input[type="submit"]{
+	padding: 5px 20px; /* 内边距 */
+}
+.closebotton{
+	background-color:#6e716e; /* 关闭按钮灰色 */
+}
+input[type="submit"]:hover,.addbotton:hover{
     background-color: #054605; /* 鼠标悬停时的背景颜色 */
 }
+.closebotton:hover{
+    background-color: #999999; /* 鼠标悬停时的背景颜色 */
+}
+
+
+
 .whole{
 	margin: 0 auto; /* 水平居中对齐 */
     width: 1200px; /* 设置宽度 */
     height: 93vh; /* 设置容器的高度为视口高度的90% */
     padding: 10px; /* 设置内边距 */
-    background-color: #f2f2f2; /* 设置背景颜色 */
+    background-color: #f7f7f7; /* 设置背景颜色 */
     border: 1px solid #ccc; /* 边框 */
     
 	display: flex;
@@ -77,12 +94,12 @@ input[type="submit"]:hover{
 }
 
 .select-date{
-	font-family: inherit;
+	font-family: "serif","Maru Gothic","Mincho";
 	height:100%;
 	font-size: 14px; /* 字体大小 */
 }
 .select-box{
-	font-family: inherit;
+	font-family: "serif","Maru Gothic","Mincho";
 	width:150px;
 	height:100%;
 	font-size: 14px; /* <select> 内选项的字体大小 */
@@ -105,14 +122,20 @@ input[type="submit"]:hover{
 	margin: 0 auto; /* 居中对齐容器 */
 }
 /* ---列表栏--- */
+.th{
+	width: 100%; /* 宽度 */
+	margin: 0 auto; /* 居中对齐容器 */
+	border: 1px solid #ccc; /* 边框 */
+	overflow-y: scroll; /* 垂直滚动条 */
+}
 .list{
 	width: 100%; /* 宽度 */
-	height: 80vh;
+	height: 60vh;
 	margin: 0 auto; /* 居中对齐容器 */
 	overflow-y: scroll; /* 垂直滚动条一直显示 */
 	
 	border: 1px solid #ccc; /* 边框 */
-	background-color: #e2e2e2; /* 背景颜色 */
+	background-color: #fbfbfb; /* 背景颜色 */
 }
 
 
