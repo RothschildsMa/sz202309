@@ -1,13 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <title>登録</title>
 </head>
+
 <body>
-
-<h1>Hello</h1>
-
+    	<div id="login_body">
+    	<div class="login_b_center">
+        	<div class="login_bg">
+            	<h1>ユーザ登録</h1>
+            	<form action="#" id="login">
+<!--                //用户名-->
+                	<div class="userName">
+                    	<span>社員ID</span><input type="text">
+                	</div>
+<!--                //密码-->
+                	<div class="password">
+                    	<span>パスワード</span><input type="password">
+                	</div>
+<!--                //登录按钮-->
+                	<div class="login_btn">
+                    	<a href="index.html">
+                        	<input type="button" value="登録">
+                    	</a>
+                	</div>
+            	</form>
+       	 </div>
+    	</div>
+	</div>
+	<script src="/static/js/login.js" th:src="@{/js/inout_stock_list.js}">
+	</script>
 
 </body>
 </html>

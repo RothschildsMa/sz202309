@@ -1,0 +1,60 @@
+h1{
+    text-align: center;
+}
+
+body{
+    background-image: url('../../images/ico1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#login_body .login_b_center{
+    width: 1200px;
+    height: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+#login_body .login_bg{
+    width: 300px;
+    height: 0px;
+    background: rgba(255,255,255,0.9);
+    position: absolute;
+    right: 300px;
+    top: 80px;
+    padding: 0px;
+}
+
+#login div{
+    height: 40px;
+    margin-top: 20px;
+}
+#login span{
+	margin-top: 10px;
+    width: 100px;
+    float: left;
+    border: 1px gray;
+}
+
+#login input{
+    width: 180px;
+    height: 40px;
+    float: left;
+}
+#login .login_btn input{
+    background-color: coral;
+    width: 300px;
+    border: none;
+    color: whitesmoke;
+    float: left;
+
+}
+#login .login_btn a:hover{
+    color: blue;
+    float: left;
+
+}
+
+a{
+    text-decoration:none;
+}
