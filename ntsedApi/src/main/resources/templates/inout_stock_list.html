@@ -44,25 +44,30 @@
 					<input name="button" type="submit" value="検索">
 				</div>
 				<div>
-					<input name="button" type="button" value="閉じる" onclick="goBack()">
+					<input name="button" type="button" value="閉じる" onclick="goBack()" class="closebotton">
 				</div>
 			</div>
 
 			<div class="add">
-				<input name="button" type="button" value="追加" onclick="goToAdd()">
+				<input name="back" type="button" value="追加" onclick="goToAdd()" class="addbotton">
 				<input type="hidden" th:value="${id}" id="idValue">
 			</div>
-			<div class="list">
+			<div class="th">
 				<table>
 					<thead>
 		                <tr>
-		                    <th width=>入出庫タイプ</th>
+		                    <th>入出庫タイプ</th>
 		                    <th>入出庫数量</th>
 		                    <th>入出庫日時</th>
 		                    <th>入出庫者</th>
 		                    <th>備考</th>
 		                </tr>
 					</thead>
+				</table>
+			</div>
+
+			<div class="list">
+				<table>
 					<tbody>
 						<!-- 使用Thymeleaf循环遍历数据 -->
 		                <tr th:each="item : ${inOutStockList.inOutItemList}">
