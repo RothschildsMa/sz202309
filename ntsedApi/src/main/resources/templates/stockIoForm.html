@@ -4,65 +4,78 @@
 <meta charset="UTF-8">
 <title>StockIO Register</title>
 <link rel="stylesheet" type="text/css" href="/css/stockIoForm.css">
+<script src="js/stockIoForm.js"></script>
 </head>
 <body>
-	<form  th:object="${stockIoForm}" method="post">
+	<form th:object="${stockIoForm}" action="/submit" method="post">
 		<div class="container">
 			<table class="tableContainer">
 				<tr>
 					<td><label for="id">在庫ID</label></td>
-					<td><span th:text="${stockIoForm.id}"></span></td>
+					<td><span th:text="${stockIoForm.id}"></span>
+                     <input type="hidden" th:field="*{id}" />
+                     </td>
+ 
 				</tr>
 				
 				<tr>
 					<td><label for="name">在庫名称</label></td>
-					<td><span th:text="${stockIoForm.name}"></span></td>
+					<td><span th:text="${stockIoForm.name}" ></span>
+					<input type="hidden" th:field="*{name}" />
+					</td>
 				</tr>
 				
 				<tr>
 					<td><label for="unit">単位</label></td>
-					<td><span th:text="${stockIoForm.unitId}"></span></td>
+					<td><span th:text="${stockIoForm.unitId}" th:field="*{unitId}"></span>
+					<input type="hidden" th:field="*{unitId}" />
+					</td>
 				</tr>
 				
 				<tr>
-					<td><label for="stockNum"></label></td>
-					<td><span th:text="${stockIoForm.stockNum}"></span></td>
+					<td><label for="stockNum">在庫数量</label></td>
+					<td><span th:text="${stockIoForm.stockNum}" ></span>
+					<input type="hidden" th:field="*{stockNum}" />
+					</td>
 				</tr>
 				
 				<tr>
 					<td><label class="star">*</label><label for="ioType">入出庫タイプ</label></td>
 					<td>
-						<select name="ioType">
-						<option value="">....</option>
-						<option value="">....</option>
-						<option value="">....</option>
-						</select>
-						<span class="errorMessage" th:errors="*{ioType}"></span>
+						<select name="ioType" th:field="*{ioTypeId}" required>
+						<option value="" selected>選択してください </option>
+						<option th:each="type : ${inOutType}"
+						 		th:text="${type.iOTypeName}" 
+						 		th:value="${type.iOTypeId}"></option>
+						</select> 
+						<span class="errorMessage" th:errors="*{ioTypeId}"></span>
 					</td>
 				</tr>
 				
 				<tr>
 					<td><label class="star">*</label><label for="ioNum">入出庫数量</label></td>
-					<td><input type="text" id ="ioNum" th:field="*{ioNum}">
+					<td><input type="text" id ="ioNum" th:field="*{ioNum}" required title="※ 入出庫タイプを入力してください">
 						<span class="errorMessage" th:errors="*{ioNum}"></span>
 					</td>
 				</tr>
 				
 				<tr>
 					<td><label for="remarks">備考</label></td>
-					<td><textarea rows="5" cols="33" id="remarks"></textarea></td>
+					<td><textarea rows="5" cols="33" id="remarks"　th:field="*{remarks}"></textarea></td>
 				</tr>
 			</table>
 		</div>
 		
 		<div >
 			<div class="buttonContainer">
-				<button  class="button">登録</button>
+				<input type="submit" class="button" name="button" value="登録">
 			</div>
 			<div class="buttonContainer">
-				<button  class="button">閉じる</button>
+				<input type="submit" value="閉じる" class="button" name="button">
+				
 			</div>
 		</div>
 	</form>
+	
 </body>
 </html>

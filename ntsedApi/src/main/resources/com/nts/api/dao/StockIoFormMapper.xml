@@ -15,4 +15,10 @@
 		<id column="stock_num" property="stockNum" />	
 	</resultMap>
 	
+	
+	<insert id="insertStockIoForm" >
+		INSERT INTO t_stock_io
+		(id,io_type,io_num,remarks) VALUES
+		(#{id},#{ioTypeId},#{ioNum},#{remarks})
+	</insert>
 </mapper>
