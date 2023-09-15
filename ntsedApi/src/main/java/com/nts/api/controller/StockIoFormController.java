@@ -35,7 +35,6 @@ public class StockIoFormController {
 	@GetMapping("/{id}/stockioregister")
 	public String stockioForm(@PathVariable String id,Model model) {
 		
-		
 		existingStock= stockIoFormService.getStocInfokById(id);
 		model.addAttribute("stockIoForm", existingStock);
 		
