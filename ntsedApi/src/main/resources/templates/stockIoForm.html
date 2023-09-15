@@ -42,20 +42,20 @@
 				<tr>
 					<td><label class="star">*</label><label for="ioType">入出庫タイプ</label></td>
 					<td>
-						<select name="ioType" th:field="*{ioTypeId}" required>
+						<select name="ioType" th:field="*{ioTypeId}" >
 						<option value="" selected>選択してください </option>
 						<option th:each="type : ${inOutType}"
 						 		th:text="${type.iOTypeName}" 
 						 		th:value="${type.iOTypeId}"></option>
 						</select> 
-						<span class="errorMessage" th:errors="*{ioTypeId}"></span>
+						<span class="errorMessage" th:errors="*{ioTypeId}" ></span>
 					</td>
 				</tr>
 				
 				<tr>
 					<td><label class="star">*</label><label for="ioNum">入出庫数量</label></td>
-					<td><input type="text" id ="ioNum" th:field="*{ioNum}" required title="※ 入出庫タイプを入力してください">
-						<span class="errorMessage" th:errors="*{ioNum}"></span>
+					<td><input type="text" id ="ioNum" th:field="*{ioNum}"  >
+						<span class="errorMessage" th:errors="*{ioNum}" ></span>
 					</td>
 				</tr>
 				
