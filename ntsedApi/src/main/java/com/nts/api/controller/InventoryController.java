@@ -14,7 +14,7 @@ public class InventoryController {
     @GetMapping("/form")
     public String showInventoryForm(Model model) {
        
-        return "inventoryPage";
+        return "inventory";
     }
 
     @PostMapping("/submit")
