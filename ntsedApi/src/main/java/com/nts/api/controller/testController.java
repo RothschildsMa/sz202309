@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class testController {
 
-	@GetMapping("/inventory")
+	@GetMapping("/inventoryTest")
 	public String testi() {
 		return "test";
 	}

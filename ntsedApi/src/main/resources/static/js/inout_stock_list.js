@@ -6,5 +6,5 @@ function goToAdd() {
 
 // 返回在庫情報一覧界面
 function goBack() {
-	window.location.href = '/inventory'; //待更新
+	window.location.href = '/inventoryTest'; //待更新
 }
