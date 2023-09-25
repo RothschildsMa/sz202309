@@ -28,7 +28,7 @@ td, th {
 }
 th {
     text-align: center; /* 文本水平对齐方式 */
-    background-color: #94c094; /* 背景颜色 */
+    background-color: #c0c0c0; /* 背景颜色 */
 }
 
 /* 按钮样式 */
@@ -40,19 +40,16 @@ input[type="submit"],.addbotton,.closebotton{
     color: white; /* 文本颜色 */
     cursor: pointer; /* 鼠标指针样式 */
     padding: 5px 15px; /* 内边距 */
-	background-color: green; /* 背景颜色 */
+	background-color:#2e2d2d; /* 背景颜色 */
 }
 input[type="submit"]{
 	padding: 5px 20px; /* 内边距 */
 }
 .closebotton{
-	background-color:#6e716e; /* 关闭按钮灰色 */
+	background-color:#2e2d2d; /* 关闭按钮灰色 */
 }
-input[type="submit"]:hover,.addbotton:hover{
-    background-color: #054605; /* 鼠标悬停时的背景颜色 */
-}
-.closebotton:hover{
-    background-color: #999999; /* 鼠标悬停时的背景颜色 */
+input[type="submit"]:hover,.addbotton:hover,.closebotton:hover{
+    background-color: black; /* 鼠标悬停时的背景颜色 */
 }
 
 
